@@ -1,7 +1,8 @@
 {
   "name": "fold",
-  "private": true,
+  "private": false,
   "type": "module",
+  "version": "0.1.0",
   "packageManager": "bun@1.4.2",
   "imports": {
     "#/*": "./client/*"
