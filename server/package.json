@@ -1,0 +1,23 @@
+{
+	"name": "@fold/api",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"api:dev": "wrangler dev --config wrangler.jsonc --port 8000",
+		"build:api": "wrangler deploy --config wrangler.jsonc --dry-run --outdir=dist",
+		"check": "tsc --noEmit",
+		"deploy": "wrangler deploy --config wrangler.jsonc",
+		"db:migrate:local": "wrangler d1 migrations apply fold --config wrangler.jsonc --local",
+		"db:migrate:remote": "bunx wrangler d1 migrations apply fold --config wrangler.jsonc --remote"
+	},
+	"dependencies": {
+		"better-auth": "^1.7.13",
+		"hono": "^4.9.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^5.20260926.1",
+		"@types/bun": "latest",
+		"typescript": "^6.0.2",
+		"wrangler": "^4.70.0"
+	}
+}

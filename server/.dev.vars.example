@@ -1,0 +1,5 @@
+BETTER_AUTH_SECRET="replace-with-a-random-secret-of-at-least-32-characters"
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+APPLE_CLIENT_ID=""
+APPLE_CLIENT_SECRET=""

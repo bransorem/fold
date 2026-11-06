@@ -1,0 +1,15 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalDependencies": ["biome.json"],
+  "tasks": {
+    "//#dev:web": { "cache": false, "persistent": true },
+    "api:dev": { "cache": false, "persistent": true },
+    "build:api": { "outputs": ["dist/**"] },
+    "//#build:web": { "outputs": ["dist/**", ".output/**"] },
+    "//#check": {},
+    "check": { "dependsOn": ["^check"] },
+    "type-check": { "dependsOn": ["^type-check"] },
+    "deploy": { "dependsOn": ["build:api"], "cache": false }
+  }
+}

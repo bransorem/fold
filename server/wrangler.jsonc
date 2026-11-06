@@ -1,0 +1,37 @@
+{
+	"$schema": "../node_modules/wrangler/config-schema.json",
+	"name": "fold-api",
+	"routes": [
+		{
+			"pattern": "api.fold.localhost",
+			"custom_domain": true
+		}
+	],
+	"main": "src/index.ts",
+	"compatibility_date": "2026-09-26",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "fold",
+			"database_id": "c58dcb1b-1399-4f55-b2af-a3fefcdc91f4",
+			"migrations_dir": "migrations"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	// Production values. Local overrides (localhost origins) live in server/.dev.vars.
+	// Optional secrets: GOOGLE_CLIENT_ID/SECRET, APPLE_CLIENT_ID/SECRET.
+	"vars": {
+		"WEB_ORIGIN": "https://fold.localhost",
+		"API_ORIGIN": "https://api.fold.localhost"
+	},
+	"secrets": {
+		"required": [
+			"BETTER_AUTH_SECRET"
+		]
+	}
+}

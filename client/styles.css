@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --fire-ink: #302b35;
+  --fire-muted: #625d67;
+  --fire-paper: #f2f2f4;
+  --fire-rust: #d51b91;
+  --button-bg: #7131b5;
+  --fire-line: #d8d6dc;
+  --sea-ink: #302b35;
+  --sea-ink-soft: #625d67;
+  --trees: #b02aaf;
+  --trees-deep: #7131b5;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-strong: rgba(255, 255, 255, 0.94);
+  --line: rgba(75, 70, 82, 0.16);
+  --inset-glint: rgba(255, 255, 255, 0.82);
+  --kicker: #8228a4;
+  --danger: #b4235a;
+  --header-bg: rgba(246, 246, 248, 0.94);
+  --chip-bg: rgba(255, 255, 255, 0.8);
+  --chip-line: rgba(174, 42, 175, 0.28);
+  --link-bg-hover: rgba(255, 255, 255, 0.9);
+  --mission-bg: #e8e7eb;
+}
+
+:root[data-theme="dark"] {
+  --sea-ink: #fae9ff;
+  --sea-ink-soft: #e0b8f1;
+  --trees: #e75ccd;
+  --trees-deep: #c293ff;
+  --surface: rgba(39, 39, 44, 0.9);
+  --surface-strong: rgba(31, 31, 36, 0.97);
+  --line: rgba(220, 214, 228, 0.18);
+  --inset-glint: rgba(255, 255, 255, 0.08);
+  --kicker: #efa3ff;
+  --danger: #ff9fbc;
+  --header-bg: rgba(30, 30, 34, 0.92);
+  --chip-bg: rgba(49, 48, 54, 0.94);
+  --chip-line: rgba(231, 92, 205, 0.32);
+  --link-bg-hover: rgba(67, 64, 72, 0.92);
+  --fire-ink: #fae9ff;
+  --fire-muted: #d6b3df;
+  --fire-paper: #18181c;
+  --fire-rust: #ff70c8;
+  --button-bg: #8b45c0;
+  --fire-line: rgba(255, 255, 255, 0.12);
+  --mission-bg: #27272d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sea-ink: #fae9ff;
+    --sea-ink-soft: #e0b8f1;
+    --trees: #e75ccd;
+    --trees-deep: #c293ff;
+    --surface: rgba(39, 39, 44, 0.9);
+    --surface-strong: rgba(31, 31, 36, 0.97);
+    --line: rgba(220, 214, 228, 0.18);
+    --inset-glint: rgba(255, 255, 255, 0.08);
+    --kicker: #efa3ff;
+    --danger: #ff9fbc;
+    --header-bg: rgba(30, 30, 34, 0.92);
+    --chip-bg: rgba(49, 48, 54, 0.94);
+    --chip-line: rgba(231, 92, 205, 0.32);
+    --link-bg-hover: rgba(67, 64, 72, 0.92);
+    --fire-ink: #fae9ff;
+    --fire-muted: #d6b3df;
+    --fire-paper: #18181c;
+    --fire-rust: #ff70c8;
+    --button-bg: #8b45c0;
+    --fire-line: rgba(255, 255, 255, 0.12);
+    --mission-bg: #27272d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--sea-ink);
+  font-family: var(--font-sans);
+  background: var(--fire-paper);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-size: 0.9em;
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--surface-strong) 82%, white 18%);
+  border-radius: 7px;
+  padding: 2px 7px;
+}
+
+pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+button,
+a {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
